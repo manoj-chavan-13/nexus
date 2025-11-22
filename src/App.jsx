@@ -36,6 +36,7 @@ import {
   Github,
   PlusCircle,
   Lock,
+  Mail,
 } from "lucide-react";
 
 /**
