@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Confectionery Atelier | Nexus Core Design</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts: Outfit (Titles) and Inter (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Custom Font Definitions */
+        .font-outfit {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Transition Classes for SPA */
+        .section-transition {
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            will-change: opacity, transform;
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'background-dark': '#0a0a0a', /* Near Black */
+                        'primary-accent': '#f4c5c5', /* Soft Rose/Cream */
+                        'secondary-accent': '#b91c49', /* Deep Rose */
+                    },
+                    boxShadow: {
+                        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-inter bg-background-dark text-neutral-100 min-h-screen">
+
+    <!-- NAVIGATION (Glassmorphism & Fixed) -->
+    <header
+        class="fixed top-0 left-0 right-0 z-50 p-4 border-b border-neutral-800/50 backdrop-blur-xl bg-background-dark/80">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center h-16">
+            <div class="text-2xl font-outfit font-light tracking-widest text-primary-accent uppercase">
+                Atelier
+            </div>
+            <div class="flex space-x-8 text-sm font-medium">
+                <a href="#" data-section="home"
+                    class="nav-link transition duration-300 hover:text-primary-accent hover:scale-105">Home</a>
+                <a href="#" data-section="menu"
+                    class="nav-link transition duration-300 hover:text-primary-accent hover:scale-105">Menu</a>
+                <a href="#" data-section="contact"
+                    class="nav-link transition duration-300 hover:text-primary-accent hover:scale-105">Contact</a>
+            </div>
+            <button
+                class="px-5 py-2 text-sm font-medium rounded-full bg-secondary-accent hover:bg-red-900 transition duration-300 min-h-[44px]">
+                Book Tasting
+            </button>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="pt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- SECTION: HOME (Hero - Asymmetrical Split) -->
+        <section id="home" class="section-transition" data-visible="true">
+            <div class="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-6rem)] py-16">
+
+                <!-- Left Content -->
+                <div class="flex flex-col justify-center">
+                    <p class="text-lg text-primary-accent mb-3 font-outfit tracking-wider">
+                        Artistry in Every Layer
+                    </p>
+                    <h1 class="text-7xl md:text-8xl font-outfit font-extralight leading-tight mb-8">
+                        The Confectionery <span class="block font-medium text-primary-accent">Atelier.</span>
+                    </h1>
+                    <p class="text-xl text-neutral-300 mb-10 max-w-lg">
+                        We transform the finest, locally sourced ingredients into bespoke, architectural masterpieces
+                        for the most memorable moments.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button
+                            class="px-8 py-3 bg-primary-accent text-background-dark font-medium rounded-lg hover:bg-white transition duration-300 min-h-[48px] shadow-lg shadow-primary-accent/20">
+                            View Signature Menu
+                        </button>
+                        <button
+                            class="px-8 py-3 border border-neutral-700 text-neutral-300 rounded-lg hover:border-primary-accent hover:text-primary-accent transition duration-300 min-h-[48px]">
+                            Custom Orders
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Visual (Placeholder for high-res cake image) -->
+                <div class="relative flex justify-center items-center h-[600px] overflow-hidden rounded-xl shadow-3xl">
+                    <!-- Subtle background gradient simulating depth -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-neutral-900 to-neutral-800 opacity-90"></div>
+
+                    <!-- A visual element representing an elegant cake -->
+                    <div
+                        class="w-4/5 h-4/5 bg-neutral-700/30 rounded-full flex items-center justify-center border-4 border-primary-accent/10">
+                        <span class="text-4xl text-primary-accent/50 font-outfit tracking-wider">
+                            Cake Visual Here
+                        </span>
+                    </div>
+
+                    <!-- Floating Card (Glassmorphism) -->
+                    <div
+                        class="absolute bottom-10 right-10 p-4 rounded-xl backdrop-blur-xl bg-white/5 border border-white/10 shadow-2xl">
+                        <p class="text-primary-accent font-outfit text-xl">Since 2018</p>
+                        <p class="text-sm text-neutral-300">Award-Winning Pastry</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: MENU (Bento Grid Showcase) -->
+        <section id="menu" class="section-transition hidden opacity-0 scale-95 pt-16 pb-24">
+            <h2 class="text-5xl font-outfit font-light text-center mb-16 pt-8">
+                Signature Bakes & Seasonal Offerings
+            </h2>
+
+            <div class="grid md:grid-cols-4 gap-6">
+
+                <!-- Bento Item 1 (Large Focus) -->
+                <div
+                    class="md:col-span-2 md:row-span-2 p-8 rounded-2xl bg-neutral-800/70 border border-neutral-700/50 flex flex-col justify-end h-[500px] transition duration-500 hover:bg-neutral-800 hover:shadow-xl">
+                    <span class="text-xs tracking-widest uppercase text-primary-accent mb-2">Seasonal Special</span>
+                    <h3 class="text-4xl font-outfit mb-3">The Lavender Dream</h3>
+                    <p class="text-neutral-400 mb-4">Earl Grey sponge, Provence lavender infusion, white chocolate
+                        ganache, and edible gold leaf finish.</p>
+                    <div class="text-2xl font-outfit text-primary-accent">$95.00</div>
+                </div>
+
+                <!-- Bento Item 2 -->
+                <div
+                    class="md:col-span-2 p-6 rounded-2xl bg-neutral-900 border border-neutral-800/50 transition duration-500 hover:bg-neutral-800/50">
+                    <h3 class="text-2xl font-outfit text-primary-accent mb-2">Pistachio & Rose</h3>
+                    <p class="text-neutral-400 mb-3">A delicate balance of roasted pistachio paste and soft Turkish
+                        rosewater buttercream.</p>
+                    <a href="#" class="text-sm text-neutral-300 hover:text-white transition duration-300">Explore
+                        Details &rarr;</a>
+                </div>
+
+                <!-- Bento Item 3 (Small Feature Card - Glass) -->
+                <div
+                    class="p-6 rounded-2xl backdrop-blur-md bg-white/5 border border-white/10 flex flex-col justify-between transition duration-500 hover:bg-white/10">
+                    <span class="text-xs uppercase tracking-widest text-neutral-400">Dietary</span>
+                    <h3 class="text-xl font-outfit mt-1 mb-3">Vegan Options</h3>
+                    <p class="text-sm text-neutral-400">Gluten-free and dairy-free options available upon request.</p>
+                </div>
+
+                <!-- Bento Item 4 -->
+                <div
+                    class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800/50 transition duration-500 hover:bg-neutral-800/50">
+                    <h3 class="text-2xl font-outfit text-primary-accent mb-2">Dark Chocolate Decadence</h3>
+                    <p class="text-neutral-400 mb-3">70% Valrhona chocolate, layered with salted caramel and a cocoa nib
+                        crunch.</p>
+                    <a href="#" class="text-sm text-neutral-300 hover:text-white transition duration-300">Order Now
+                        &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CONTACT -->
+        <section id="contact" class="section-transition hidden opacity-0 scale-95 pt-16 pb-24">
+            <h2 class="text-5xl font-outfit font-light text-center mb-16 pt-8">
+                Connect with the Atelier
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12">
+
+                <!-- Contact Form -->
+                <div class="p-8 rounded-2xl bg-neutral-800/70 border border-neutral-700/50">
+                    <h3 class="text-3xl font-outfit mb-6 text-primary-accent">Custom Inquiry</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neutral-300 mb-1">Name</label>
+                            <input type="text" id="name"
+                                class="w-full p-3 rounded-lg bg-neutral-900 border border-neutral-700 focus:border-primary-accent focus:ring-1 focus:ring-primary-accent text-neutral-100 transition duration-200">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-neutral-300 mb-1">Email</label>
+                            <input type="email" id="email"
+                                class="w-full p-3 rounded-lg bg-neutral-900 border border-neutral-700 focus:border-primary-accent focus:ring-1 focus:ring-primary-accent text-neutral-100 transition duration-200">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-neutral-300 mb-1">Project
+                                Details</label>
+                            <textarea id="message" rows="4"
+                                class="w-full p-3 rounded-lg bg-neutral-900 border border-neutral-700 focus:border-primary-accent focus:ring-1 focus:ring-primary-accent text-neutral-100 transition duration-200"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full py-3 bg-secondary-accent text-white font-medium rounded-lg hover:bg-red-900 transition duration-300 min-h-[48px]">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Location & Info -->
+                <div class="space-y-6">
+                    <!-- Map Placeholder -->
+                    <div
+                        class="h-64 rounded-2xl bg-neutral-900 border border-neutral-700 flex items-center justify-center text-neutral-500">
+                        [Elegant Map Widget Placeholder]
+                    </div>
+
+                    <!-- Details Card -->
+                    <div class="p-6 rounded-2xl bg-neutral-900 border border-neutral-700 space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-primary-accent">📍</span>
+                            <div>
+                                <p class="font-medium">Location</p>
+                                <p class="text-sm text-neutral-400">140 Artisan Way, Suite 300, Metropolis, 90210</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-primary-accent">🕒</span>
+                            <div>
+                                <p class="font-medium">Hours</p>
+                                <p class="text-sm text-neutral-400">Tues - Sat: 10:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-primary-accent">📞</span>
+                            <div>
+                                <p class="font-medium">Phone</p>
+                                <p class="text-sm text-neutral-400">(555) 123-ATELIER</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-16 py-8 border-t border-neutral-800 text-center text-sm text-neutral-500">
+        <p>&copy; 2024 The Confectionery Atelier. Crafted with precision by Nexus Core.</p>
+    </footer>
+
+    <!-- JAVASCRIPT FOR SPA ROUTING AND TRANSITIONS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section.section-transition');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            // Initialize: Ensure only the home section is visible on load
+            sections.forEach(sec => {
+                if (sec.id !== 'home') {
+                    sec.style.display = 'none';
+                    sec.setAttribute('data-visible', 'false');
+                } else {
+                    sec.style.opacity = '1';
+                    sec.style.transform = 'scale(1)';
+                    sec.setAttribute('data-visible', 'true');
+                }
+            });
+
+            /**
+             * Handles the smooth transition between sections (SPA behavior).
+             * @param {string} targetId - The ID of the section to show (e.g., 'home', 'menu').
+             */
+            function showSection(targetId) {
+                sections.forEach(sec => {
+                    const isTarget = sec.id === targetId;
+                    const isVisible = sec.getAttribute('data-visible') === 'true';
+
+                    if (isTarget && !isVisible) {
+                        // 1. Prepare target for entry (ensure display is block/flex before opacity/transform)
+                        sec.style.display = 'block';
+
+                        // Wait for display change to register, then apply transition classes
+                        setTimeout(() => {
+                            sec.style.opacity = '1';
+                            sec.style.transform = 'scale(1)';
+                            sec.setAttribute('data-visible', 'true');
+                        }, 10); // Small delay for reflow
+
+                    } else if (!isTarget && isVisible) {
+                        // 2. Hide current section
+                        sec.style.opacity = '0';
+                        sec.style.transform = 'scale(0.95)';
+                        sec.setAttribute('data-visible', 'false');
+
+                        // Wait for transition to complete before setting display: none
+                        setTimeout(() => {
+                            sec.style.display = 'none';
+                        }, 600); // Matches transition duration
+                    }
+                });
+            }
+
+            // Event Listeners for Navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = e.currentTarget.getAttribute('data-section');
+                    showSection(targetId);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
